@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="300dp"
+    android:layout_height="wrap_content"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@color/lightGray"
+    android:orientation="vertical"
+    android:padding="10dp"
+    tools:context=".ScrollingActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <RatingBar
+            android:id="@+id/ratingbar"
+            style="@style/Widget.AppCompat.RatingBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:numStars="5"
+            android:rating="5"
+            android:stepSize="0.5"
+            />
+        <EditText
+            android:id="@+id/comment"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="45dp"
+            android:maxHeight="75dp"
+            android:textSize="15dp"
+            android:background="@android:color/white"
+            android:isScrollContainer="true"
+            android:inputType="textMultiLine"
+            android:hint="후기를 입력하세요."
+            />
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="확인"
+            android:id="@+id/btn_confirm"
+            android:textSize="15dp"
+            android:textColor="#FFFFFF"
+            android:layout_marginTop="10dp"
+            android:gravity="center"
+            android:background="@color/colorPrimaryDark"
+
+            />
+    </LinearLayout>
+</LinearLayout>

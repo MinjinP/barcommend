@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">BARCOMMEND</string>
+    <string name="login">Login</string>
+    <string name="register">Register</string>
+    <string name="user_id">Id</string>
+    <string name="user_pw">Pw</string>
+    <string name="user_name">Name</string>
+    <string name="user_phone">Phone</string>
+    <string name="user_pw_2">Re-type Password</string>
+</resources>
