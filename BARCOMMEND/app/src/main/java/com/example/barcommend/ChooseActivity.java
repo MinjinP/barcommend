@@ -4,11 +4,12 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 public class ChooseActivity extends AppCompatActivity {
-
+    ImageView productImage;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -17,6 +18,8 @@ public class ChooseActivity extends AppCompatActivity {
         Button readBtn = (Button) findViewById(R.id.toRead); // sign up button
         Button closeBtn = (Button) findViewById(R.id.close);
 
+        productImage = (ImageView) findViewById(R.id.productImage2);
+        productImage.setImageBitmap(ConfirmActivity.bitmap);
         readBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

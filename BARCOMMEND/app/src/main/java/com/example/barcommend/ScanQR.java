@@ -32,7 +32,7 @@ public class ScanQR extends AppCompatActivity {
             //result.getContents() : QR코드 읽어서 가져옴.
             if(result.getContents() == null) {
                 Toast.makeText(this, "Cancelled", Toast.LENGTH_LONG).show();
-                startActivity(new Intent(this, ConfirmActivity.class)); //실제 구동 시 삭제
+                startActivity(new Intent(this, ConfirmActivity.class)); //실제 구동 시 삭제!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
                 // todo
             } else {
                 Toast.makeText(this, "Scanned: " + result.getContents(), Toast.LENGTH_LONG).show();
