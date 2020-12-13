@@ -7,9 +7,12 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
+
+import org.w3c.dom.Text;
 
 public class MainActivity extends AppCompatActivity {
-    EditText eText;
+    TextView eText;
     private Button scanQRBtn;
     private Button logoutBtn;
 
@@ -18,8 +21,11 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        eText = (EditText) findViewById(R.id.edittext);
-        eText.setText("안녕하세요 OO님");
+        Intent intent = getIntent();
+        String userName = intent.getStringExtra("userName");
+
+        eText = (TextView) findViewById(R.id.textview);
+        eText.setText("안녕하세요 " + userName + "님");
 
         scanQRBtn = (Button) findViewById(R.id.scanQR);
         scanQRBtn.setOnClickListener(new View.OnClickListener(){

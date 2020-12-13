@@ -8,6 +8,6 @@
     <item>
         <bitmap
             android:gravity="center"
-            android:src="@drawable/sample_image"/>
+            android:src="@drawable/barcommend_intro"/>
     </item>
 </layer-list>
