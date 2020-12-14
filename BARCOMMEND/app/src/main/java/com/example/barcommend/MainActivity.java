@@ -15,6 +15,7 @@ public class MainActivity extends AppCompatActivity {
     TextView eText;
     private Button scanQRBtn;
     private Button logoutBtn;
+    private String userID, userName;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,7 +23,8 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         Intent intent = getIntent();
-        String userName = intent.getStringExtra("userName");
+        userID = intent.getStringExtra("userID");
+        userName = intent.getStringExtra("userName");
 
         eText = (TextView) findViewById(R.id.textview);
         eText.setText("안녕하세요 " + userName + "님");
@@ -31,6 +33,10 @@ public class MainActivity extends AppCompatActivity {
         scanQRBtn.setOnClickListener(new View.OnClickListener(){
             public void onClick(View v){
                 Intent intent = new Intent(MainActivity.this, ScanQR.class);
+
+                intent.putExtra( "userID", userID );
+                intent.putExtra( "userName", userName );
+
                 startActivity(intent);
             }
         });

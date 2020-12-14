@@ -11,11 +11,16 @@ import com.google.zxing.integration.android.IntentResult;
 
 public class ScanQR extends AppCompatActivity {
     private IntentIntegrator qrScan;
+    private String userID, userName;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_scan_qr);
+
+        Intent intent = getIntent();
+        userID = intent.getStringExtra("userID");
+        userName = intent.getStringExtra("userName");
 
         // QR-code Scanner
         qrScan = new IntentIntegrator(this);
@@ -40,6 +45,9 @@ public class ScanQR extends AppCompatActivity {
 
                 Intent intent = new Intent( getApplicationContext(), ConfirmActivity.class );
                 intent.putExtra( "scanNum", result.getContents() );
+                intent.putExtra( "userID", userID );
+                intent.putExtra( "userName", userName);
+
                 startActivity( intent );
             }
             finish();

@@ -24,6 +24,7 @@ public class ConfirmActivity extends AppCompatActivity {
     String url = "http://koreannet.or.kr/home/hpisSrchGtin.gs1?gtin=";
     ImageView productImage;
     public static Bitmap bitmap;
+    private String gtin, userID, userName;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,8 +33,9 @@ public class ConfirmActivity extends AppCompatActivity {
         productImage = (ImageView) findViewById(R.id.productImage);
 
         Intent intent = getIntent();
-        String gtin = intent.getStringExtra("scanNum");
-
+        gtin = intent.getStringExtra("scanNum");
+        userID = intent.getStringExtra("userID");
+        userName = intent.getStringExtra("userName");
 
         gtin = "8801382131038"; //debug!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
         final String finalUrl = url + gtin;
@@ -75,6 +77,11 @@ public class ConfirmActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(getApplicationContext(), ChooseActivity.class);
+
+                intent.putExtra( "Gtin", gtin );
+                intent.putExtra( "userID", userID );
+                intent.putExtra( "userName", userName);
+
                 startActivity(intent);
                 finish();
             }
