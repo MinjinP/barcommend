@@ -8,10 +8,8 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class WriteReviewRequest extends StringRequest {
-    //서버 URL 설정(php 파일 연동)
     final static private String URL = "http://alswls97.dothome.co.kr/WriteReview.php";
     private Map<String, String> map;
-    //private Map<String, String>parameters;
 
     public WriteReviewRequest(String userID, String Gtin, String ReviewText, Double StarPoint, String ReviewDate, Response.Listener<String> listener) {
         super(Method.POST, URL, listener, null);
@@ -22,7 +20,6 @@ public class WriteReviewRequest extends StringRequest {
         map.put("ReviewText", ReviewText);
         map.put("StarPoint", StarPoint + "");
         map.put("ReviewDate", ReviewDate);
-
     }
 
     @Override

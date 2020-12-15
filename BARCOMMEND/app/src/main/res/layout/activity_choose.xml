@@ -25,6 +25,7 @@
             android:layout_gravity="center"
             />
         <TextView
+            android:id="@+id/itemName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="제품명: ****"
@@ -32,6 +33,7 @@
             android:layout_margin="5dp"
             />
         <TextView
+            android:id="@+id/rating"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="평점: 0.0"

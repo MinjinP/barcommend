@@ -1,21 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context=".ScrollingActivity"
-    tools:showIn="@layout/activity_scrolling"
     android:orientation="vertical"
-    android:paddingBottom="10dp"
-    android:paddingLeft="10dp"
-    android:paddingRight="10dp"
-    android:paddingTop="10dp" >
-
+    android:padding="10dp"
+    >
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:orientation="vertical"
         android:background="@color/lightGray"
         >
@@ -25,11 +18,13 @@
             android:layout_weight="2"
             android:orientation="horizontal" >
             <TextView
+                android:id="@+id/rv_date"
                 android:layout_width="wrap_content"
                 android:layout_marginLeft="5dp"
                 android:layout_height="wrap_content"
                 android:text="작성일: 2020-11-21" />
             <TextView
+                android:id="@+id/rv_id"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="20dp"
@@ -48,6 +43,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
             <TextView
+                android:id="@+id/rv_text"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
@@ -55,5 +51,4 @@
                 android:text="좋아요" />
         </LinearLayout>
     </LinearLayout>
-
-</androidx.core.widget.NestedScrollView>
+</LinearLayout>

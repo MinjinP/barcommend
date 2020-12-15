@@ -23,7 +23,8 @@
             android:hint="@string/user_id"
             android:inputType="textEmailAddress"
             android:maxLines="1"
-            android:singleLine="true" />
+            android:singleLine="true"
+            android:nextFocusDown="@+id/password"/>
 
         <EditText
             android:id="@+id/password"
