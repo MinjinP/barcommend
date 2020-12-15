@@ -7,7 +7,6 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -23,7 +22,8 @@ import org.json.JSONObject;
 public class ChooseActivity extends AppCompatActivity {
     ImageView productImage;
     TextView tv;
-    private String scanNum, userID, userName;
+    TextView productName;
+    private String scanNum, userID, userName, itemName;
     public double point;
     String[] getStarPoint;
 
@@ -36,10 +36,12 @@ public class ChooseActivity extends AppCompatActivity {
         scanNum = intent.getStringExtra("Gtin");
         userID = intent.getStringExtra("userID");
         userName = intent.getStringExtra("userName");
+        itemName = intent.getStringExtra("itemName");
 
         productImage = (ImageView) findViewById(R.id.productImage2);
         productImage.setImageBitmap(ConfirmActivity.bitmap);
-
+        productName = (TextView) findViewById(R.id.itemName);
+        productName.setText("제품명:"+itemName);
 
         //평점 계산 위한 리뷰 불러오기
         final String Gtin = scanNum;
@@ -87,6 +89,7 @@ public class ChooseActivity extends AppCompatActivity {
 
         Button readBtn = (Button) findViewById(R.id.toRead); // sign up button
         Button closeBtn = (Button) findViewById(R.id.close);
+
         readBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -107,5 +110,4 @@ public class ChooseActivity extends AppCompatActivity {
             }
         });
     }
-
 }

@@ -58,8 +58,7 @@ public class ScrollingActivity extends AppCompatActivity {
 
         //----------------------------------------------
         //리뷰 불러오기
-        //String Gtin = scanNum;
-        final String Gtin = "8801382131038"; //debug!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+        String Gtin = scanNum;
 
         Response.Listener<String> responseListener = new Response.Listener<String>() {
             @Override
@@ -92,6 +91,7 @@ public class ScrollingActivity extends AppCompatActivity {
                 }
             }
         };
+
         GetReviewRequest getreviewRequest = new GetReviewRequest( Gtin, responseListener );
         RequestQueue queue = Volley.newRequestQueue( ScrollingActivity.this );
         queue.add( getreviewRequest );
