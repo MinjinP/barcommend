@@ -1,6 +1,7 @@
 package com.example.barcommend.data;
 
 import com.android.volley.AuthFailureError;
+import com.android.volley.Request;
 import com.android.volley.Response;
 import com.android.volley.toolbox.StringRequest;
 
@@ -14,7 +15,7 @@ public class WriteReviewRequest extends StringRequest {
     //private Map<String, String>parameters;
 
     public WriteReviewRequest(String userID, String Gtin, String ReviewText, Double StarPoint, String ReviewDate, Response.Listener<String> listener) {
-        super(Method.POST, URL, listener, null);
+        super(Request.Method.POST, URL, listener, null);
 
         map = new HashMap<>();
         map.put("userID", userID);

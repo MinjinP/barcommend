@@ -1,6 +1,7 @@
 package com.example.barcommend.data;
 
 import com.android.volley.AuthFailureError;
+import com.android.volley.Request;
 import com.android.volley.Response;
 import com.android.volley.toolbox.StringRequest;
 
@@ -13,7 +14,7 @@ public class GetReviewRequest extends StringRequest {
     private Map<String, String> map;
 
     public GetReviewRequest(String Gtin, Response.Listener<String> listener) {
-        super(Method.POST, URL, listener, null);
+        super(Request.Method.POST, URL, listener, null);
 
         map = new HashMap<>();
         map.put("Gtin", Gtin);
